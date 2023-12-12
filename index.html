@@ -4,6 +4,7 @@
 <title>W3.JS</title>
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <script src="w3.js"></script>
+<script src="ajax.js"></script>
 <body>
 
 <div class="w3-container">
@@ -16,6 +17,29 @@
 </div>
 
 </div>
+
+<button type="button"
+onclick="loadDoc('https://www.vg.no/', myFunction)">Change Content
+</button>
+</div>
+
+<script>
+function loadDoc(url, cFunction) {
+  var xhttp;
+  xhttp=new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      cFunction(this);
+    }
+  };
+  xhttp.open("GET", url, true);
+  xhttp.send();
+}
+function myFunction(xhttp) {
+  document.getElementById("demo").innerHTML =
+  xhttp.responseText;
+}
+</script>
 
 </body>
 </html>
