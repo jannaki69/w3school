@@ -18,9 +18,13 @@
 
 </div>
 
+
+<div id="demo"></div>
 <button type="button"
-onclick="loadDoc('https://www.vg.no/', myFunction)">Change Content
+onclick="loadDoc('Text.txt', myFunction)">Change Content
 </button>
+
+<button type="button" onclick="loadDoc()">Change Content</button>
 </div>
 
 <script>
@@ -39,6 +43,31 @@ function myFunction(xhttp) {
   document.getElementById("demo").innerHTML =
   xhttp.responseText;
 }
+
+
+
+
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("demo").innerHTML =
+      this.responseText;
+    }
+  };
+
+  try {
+    
+  
+    xhttp.open("GET", "C:\Users\janna\VS\w3schoolText.txt", true);
+    xhttp.send();
+  }
+  catch (error) {
+    console.log(url + ': ' + e); 
+  }
+
+}
+
 </script>
 
 </body>
