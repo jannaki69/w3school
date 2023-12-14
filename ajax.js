@@ -4,7 +4,7 @@ function loadDoc() {
   const xhttp = new XMLHttpRequest();
   
   xhttp.onload = function() {
-    alert('onload1');
+    alert('onload......');
     console.log(this.responseText);
     document.getElementById("demo").innerHTML =
     this.getAllResponseHeaders();
@@ -15,7 +15,7 @@ function loadDoc() {
     alert(this.status);
     
     if (this.readyState == 4 && this.status == 200) {
-      document.getElementById("demo").innerHTML =
+      document.getElementById("demo2").innerHTML =
       this.responseText;
     }
   };
