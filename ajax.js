@@ -1,3 +1,41 @@
+
+function loadDoc() {
+  alert('loadDoc');
+  const xhttp = new XMLHttpRequest();
+  
+  xhttp.onload = function() {
+    alert('onload');
+    console.log(this.responseText);
+    document.getElementById("demo").innerHTML =
+    this.getAllResponseHeaders();
+  }
+
+  xhttp.onreadystatechange = function() {
+    alert(this.readyState);
+    alert(this.status);
+    
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("demo").innerHTML =
+      this.responseText;
+    }
+  };
+
+
+  //let url = new URL('https://google.com/search');
+  //url.searchParams.set('q', 'test me!');
+
+  //let url = new URL('www.vg.no');
+  //url.searchParams.set('q', 'test me!');
+  url='Text.html';
+
+
+  xhttp.open("GET", url);
+  xhttp.send();
+}
+
+
+/*
+
 // 1. Create a new XMLHttpRequest object
 let xhr = new XMLHttpRequest();
 
@@ -24,3 +62,4 @@ xhr.onprogress = function(event) {
   }
 
 };
+*/
