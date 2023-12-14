@@ -21,12 +21,12 @@ function loadDoc() {
   };
 
 
-  //let url = new URL('https://google.com/search');
-  //url.searchParams.set('q', 'test me!');
+  let url = new URL('https://google.com/search');
+  url.searchParams.set('q', 'test me!');
 
   //let url = new URL('www.vg.no');
   //url.searchParams.set('q', 'test me!');
-  url='Text.html';
+  //url='Text.html';
 
 
   xhttp.open("GET", url);
