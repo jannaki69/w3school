@@ -4,7 +4,7 @@ function loadDoc() {
   const xhttp = new XMLHttpRequest();
   
   xhttp.onload = function() {
-    alert('onload');
+    alert('onload1');
     console.log(this.responseText);
     document.getElementById("demo").innerHTML =
     this.getAllResponseHeaders();
