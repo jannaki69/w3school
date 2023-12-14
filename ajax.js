@@ -15,6 +15,7 @@ function loadDoc() {
     alert(this.status);
     
     if (this.readyState == 4 && this.status == 200) {
+      alert('Ready...');
       document.getElementById("demo2").innerHTML =
       this.responseText;
     }
