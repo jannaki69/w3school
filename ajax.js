@@ -1,6 +1,7 @@
 
 function loadDoc() {
-  alert('loadDoc');
+  try{
+  //alert('loadDoc');
   const xhttp = new XMLHttpRequest();
   
   xhttp.onload = function() {
@@ -14,11 +15,18 @@ function loadDoc() {
     alert(this.readyState);
     alert(this.status);
     
+    try {
+      
+     
+    
     if (this.readyState == 4 && this.status == 200) {
-      alert('Ready...');
       document.getElementById("demo2").innerHTML =
       this.responseText;
     }
+  }
+    catch (error) {
+      alert(err.message);  
+    }  
   };
 
 
@@ -27,11 +35,20 @@ function loadDoc() {
 
   //let url = new URL('www.vg.no');
   //url.searchParams.set('q', 'test me!');
-  //url='Text.html';
+  url='Text.html';
 
 
   xhttp.open("GET", url);
   xhttp.send();
+
+  alert(url.protocol); // https:
+  alert(url.host);     // javascript.info
+  alert(url.pathname); // /url
+  }
+  catch(err)
+  {
+    alert(err.message);
+  }
 }
 
 
