@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html>
     <script src="ajax.js"></script>
+    <script src="script.js" defer></script>
     <body>
     <h2>Ledige tjenester</h2>
-    <button type="button" onclick="loadDoc()">Request data</button>
+    <button type="button" onclick="findText()">Reset</button>
 
     <button type="button" onclick="window.open('https://tpowebservice.nsb.no:8501/app/open-duties','_blank')">Request data</button>
+    <iframe src="https://tpowebservice.nsb.no:8501/app/login" id="IF1"></iframe>
+    <iframe src="https://tpowebservice.nsb.no:8501/app/open-duties" id="IF2"></iframe>
     <p id="demo"></p>
     <p id="demo2"></p>
+    <iframe name="username"></iframe>
     </body>
 </html>
